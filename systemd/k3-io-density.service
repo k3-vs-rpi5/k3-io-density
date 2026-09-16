@@ -1,0 +1,14 @@
+[Unit]
+Description=K3 IO density monitor (block layer and per-process read/write)
+Documentation=file:///usr/local/share/doc/k3-io-density/README.md
+After=local-fs.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/lib/k3-io-density/io_density --object /usr/local/lib/k3-io-density/io_density.bpf.o --seconds 86400 --interval 10 --json /run/k3-io-density/latest.json
+Restart=always
+RestartSec=5
+RuntimeDirectory=k3-io-density
+
+[Install]
+WantedBy=multi-user.target
