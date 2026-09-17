@@ -47,3 +47,13 @@ hardware/k3-io-density/scripts/run.sh --seconds 15 --workload \
 - 挂载前会核对 `/sys/kernel/tracing/events/.../format` 中的字段偏移，内核变更时
   直接失败关闭，而不是给出错误数字。
 - 导出映射表之前会先卸载探针：遍历一个仍被 BPF 持续更新的哈希表可能会无限循环。
+
+## 工作区集成
+
+本仓库位于 `hardware/k3-io-density`，自带 Git 历史。它目前还没有登记到工作区
+manifest 中，因为 manifest 会从共享远端解析 `k3-io-density.git`，而首次 push
+仍需人工批准。远端仓库就绪后，把下面这行加入 `default.xml`：
+
+```xml
+<project name="k3-io-density.git" path="hardware/k3-io-density" />
+```

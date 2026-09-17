@@ -53,3 +53,15 @@ uses `<workspace>/.ssh-k3`, mode `0600`, never printed.
   fails closed instead of producing wrong numbers.
 - The probes are detached before the maps are dumped: iterating a hash map that
   BPF is still updating can otherwise run without bound.
+
+## Workspace integration
+
+This repository lives at `hardware/k3-io-density` and carries its own Git
+history. It is not listed in the workspace manifest yet, because the manifest
+resolves `k3-io-density.git` from the shared remote and the first push still
+needs human approval. Once the remote repository exists, add this entry to
+`default.xml`:
+
+```xml
+<project name="k3-io-density.git" path="hardware/k3-io-density" />
+```
