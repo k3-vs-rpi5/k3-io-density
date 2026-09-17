@@ -6,7 +6,7 @@ SCRIPT_DIR=$(CDPATH='' cd -- "$(dirname "$0")" && pwd)
 ROOT=$(CDPATH='' cd -- "$SCRIPT_DIR/.." && pwd)
 WORKSPACE=$(CDPATH='' cd -- "$ROOT/../.." && pwd)
 CLANG=${K3_IO_CLANG:-clang-23}
-TOOLCHAIN=${K3_IO_TOOLCHAIN:-$WORKSPACE/spacemit-toolchain-linux-glibc-x86_64-v1.2.2}
+TOOLCHAIN=${K3_IO_TOOLCHAIN:-$WORKSPACE/spacemit-toolchain-linux-glibc-x86_64-v1.2.4}
 LIBBPF_DIR=${K3_IO_LIBBPF_DIR:-$WORKSPACE/.local/k3-tools/riscv64/lib}
 INCLUDE_DIR=${K3_IO_INCLUDE_DIR:-$WORKSPACE/.local/k3-tools/include}
 OUT=${K3_IO_OUT:-$WORKSPACE/.local/k3-io-density/build}
